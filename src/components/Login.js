@@ -1,9 +1,25 @@
-import React from "react";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/user';
 
-function Login(props) {
+function Login() {
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <button>Login</button>
+      <button
+        onClick={() =>
+          dispatch(
+            login({
+              name: 'Daniel',
+              age: 33,
+              email: 'eu@danielmota.com.br',
+            }),
+          )
+        }
+      >
+        Login
+      </button>
     </div>
   );
 }
